@@ -1,4 +1,9 @@
-include .env
+# Only include .env if it exists and we're not running init-project
+ifeq (,$(findstring init-project,$(MAKECMDGOALS)))
+  ifneq (,$(wildcard .env))
+    include .env
+  endif
+endif
 export
 
 ##################
@@ -40,7 +45,9 @@ install-symfony:
 install-symfony-webapp:
 	docker exec -u www-data -ti ${PROJECT_NAME}_www bash -c "composer require webapp"
 init-project:
-	cp .env.template .env
-	cp ./backend/.env.dev ./backend/.env
-	$(MAKE) build
-	docker exec -u www-data -ti ${PROJECT_NAME}_www bash -c "composer install"
+	@if [ ! -f .env.template ]; then echo "Error: .env.template file not found"; exit 1; fi
+	@if [ ! -f ./backend/.env.dev ]; then echo "Error: ./backend/.env.dev file not found"; exit 1; fi
+	@cp .env.template .env && echo ".env file created"
+	@cp ./backend/.env.dev ./backend/.env && echo "backend/.env file created"
+	@$(MAKE) build-daemon && echo "Docker containers started"
+	@docker exec -u www-data -ti php-unit-kata_www bash -c "composer install"
