@@ -1,0 +1,42 @@
+{
+  "pizzas": [
+    {
+      "nom": "Margherita",
+      "quantite": 2,
+      "taille": "moyenne",
+      "ingredients": [
+        {
+          "nom": "Mozzarella",
+          "quantite": 2,
+          "prix": 3,
+          "estVegetarien": true
+        },
+        {
+          "nom": "Basilic",
+          "quantite": 1,
+          "prix": 1,
+          "estVegetarien": true
+        }
+      ]
+    },
+    {
+      "nom": "Pepperoni",
+      "quantite": 1,
+      "taille": "grande",
+      "ingredients": [
+        {
+          "nom": "Mozzarella",
+          "quantite": 2,
+          "prix": 3,
+          "estVegetarien": true
+        },
+        {
+          "nom": "Pepperoni",
+          "quantite": 2,
+          "prix": 4,
+          "estVegetarien": false
+        }
+      ]
+    }
+  ]
+}
