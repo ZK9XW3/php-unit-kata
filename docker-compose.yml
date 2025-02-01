@@ -1,60 +1,22 @@
 version: "3.8"
 services:
-    ###########################
-    # Mysql database container
-    ###########################
-    db:
-        image: mysql:${MYSQL_VERSION}
-        container_name: ${PROJECT_NAME}_db
-        restart: always
-        command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-        ports:
-          - 3308:3306
-        expose:
-          - 3308
-        volumes:
-            - db-data:/var/lib/mysql
-        environment:
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-        networks:
-            - symfony_stack_network
-
-    ###########################
-    # phpmyadmin container
-    ###########################
-    phpmyadmin:
-        image: phpmyadmin
-        container_name: ${PROJECT_NAME}_phpmyadmin
-        restart: always
-        depends_on:
-            - db
-        ports:
-            - ${PMA_HOST_PORT}:80
-        environment:
-            PMA_HOST: db
-        networks:
-            - symfony_stack_network
-
-    ###########################
-    # Symfony apache project container
-    ###########################
-    www:
-        build: ./
-        container_name: ${PROJECT_NAME}_www
-        ports:
-          - ${PHP_APACHE_HOST_PORT}:80
-        volumes:
-            - ${VHOSTS_DIR}:/etc/apache2/sites-enabled
-            - ${BACKEND_DIR}:/var/www/html
-        restart: always
-        environment:
-            - HOST_UID=${HOST_UID:-1000}
-            - HOST_GID=${HOST_GID:-1000}
-        networks:
-            - symfony_stack_network
+  ###########################
+  # Symfony apache project container
+  ###########################
+  www:
+    build: ./
+    container_name: ${PROJECT_NAME}_www
+    ports:
+      - ${PHP_APACHE_HOST_PORT}:80
+    volumes:
+      - ${VHOSTS_DIR}:/etc/apache2/sites-enabled
+      - ${BACKEND_DIR}:/var/www/html
+    restart: always
+    environment:
+      - HOST_UID=${HOST_UID:-1000}
+      - HOST_GID=${HOST_GID:-1000}
+    networks:
+      - php_unit_kata_network
 
 networks:
-    symfony_stack_network:
-
-volumes:
-    db-data:
+  php_unit_kata_network:
