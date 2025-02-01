@@ -9,6 +9,13 @@
 - Make on your local machine if you want to use the Makefile commands (optionnal)
 - git (optionnal but better)
 
+## Init the existing project
+- check entrypoint.sh format (should be in LF)
+- Maker : `make init-project`
+  - OR copy .env.template to .env and set the variables (Ports, project name, etc) `cp .env.template .env`
+  - in backend directory copy .env.dev to .env `cp ./backend/.env.dev ./backend/.env`
+  - then build `docker-compose up --build`
+
 ## How to set a new project
 ### Prepare
 - `git clone` this project

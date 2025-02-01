@@ -39,3 +39,8 @@ install-symfony:
 	docker exec -u www-data -ti ${PROJECT_NAME}_www bash -c "composer create-project symfony/skeleton:"${version}" ."
 install-symfony-webapp:
 	docker exec -u www-data -ti ${PROJECT_NAME}_www bash -c "composer require webapp"
+init-project:
+	cp .env.template .env
+	cp ./backend/.env.dev ./backend/.env
+	$(MAKE) build
+	docker exec -u www-data -ti ${PROJECT_NAME}_www bash -c "composer install"
