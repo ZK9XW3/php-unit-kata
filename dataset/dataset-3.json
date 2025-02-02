@@ -1,0 +1,60 @@
+{
+  "pizzas": [
+    {
+      "nom": "Hawaienne",
+      "quantite": 2,
+      "taille": "moyenne",
+      "ingredients": [
+        {
+          "nom": "Mozzarella",
+          "quantite": 2,
+          "prix": 3,
+          "estVegetarien": true
+        },
+        {
+          "nom": "Jambon",
+          "quantite": 2,
+          "prix": 4,
+          "estVegetarien": false
+        },
+        {
+          "nom": "Ananas",
+          "quantite": 2,
+          "prix": 2,
+          "estVegetarien": true
+        }
+      ]
+    },
+    {
+      "nom": "Fruits de Mer",
+      "quantite": 1,
+      "taille": "grande",
+      "ingredients": [
+        {
+          "nom": "Mozzarella",
+          "quantite": 1,
+          "prix": 3,
+          "estVegetarien": true
+        },
+        {
+          "nom": "Crevettes",
+          "quantite": 3,
+          "prix": 5,
+          "estVegetarien": false
+        },
+        {
+          "nom": "Moules",
+          "quantite": 2,
+          "prix": 4,
+          "estVegetarien": false
+        },
+        {
+          "nom": "Calamars",
+          "quantite": 2,
+          "prix": 4,
+          "estVegetarien": false
+        }
+      ]
+    }
+  ]
+}

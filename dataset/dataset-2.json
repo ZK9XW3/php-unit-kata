@@ -1,0 +1,66 @@
+{
+  "pizzas": [
+    {
+      "nom": "Quatre Fromages",
+      "quantite": 1,
+      "taille": "grande",
+      "ingredients": [
+        {
+          "nom": "Mozzarella",
+          "quantite": 2,
+          "prix": 3,
+          "estVegetarien": true
+        },
+        {
+          "nom": "Gorgonzola",
+          "quantite": 1,
+          "prix": 4,
+          "estVegetarien": true
+        },
+        {
+          "nom": "Parmesan",
+          "quantite": 1,
+          "prix": 3,
+          "estVegetarien": true
+        },
+        {
+          "nom": "Chèvre",
+          "quantite": 1,
+          "prix": 3,
+          "estVegetarien": true
+        }
+      ]
+    },
+    {
+      "nom": "Végétarienne",
+      "quantite": 3,
+      "taille": "petite",
+      "ingredients": [
+        {
+          "nom": "Mozzarella",
+          "quantite": 1,
+          "prix": 3,
+          "estVegetarien": true
+        },
+        {
+          "nom": "Champignons",
+          "quantite": 2,
+          "prix": 2,
+          "estVegetarien": true
+        },
+        {
+          "nom": "Poivrons",
+          "quantite": 2,
+          "prix": 2,
+          "estVegetarien": true
+        },
+        {
+          "nom": "Oignons",
+          "quantite": 1,
+          "prix": 1,
+          "estVegetarien": true
+        }
+      ]
+    }
+  ]
+}
